@@ -2,7 +2,9 @@ const { Router } = require("express");
 const User = require("../models/user");
 
 const router = Router();
-
+router.get("/test",(req,res)=>{
+  res.send("user route testing");
+})
 router.get("/signin", (req, res) => {
   return res.render("signin");
 });

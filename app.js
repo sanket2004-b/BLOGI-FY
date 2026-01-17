@@ -15,7 +15,7 @@ const {
 } = require("./middlewares/authentication");
 
 const app = express();
-const PORT = process.env.PORT || 8000;
+const PORT = (process.env.PORT )|| 3001
 
 mongoose
   .connect(process.env.MONGO_URL)
@@ -35,6 +35,9 @@ app.get("/", async (req, res) => {
     user: req.user,
     blogs: allBlogs,
   });
+});
+app.get('/testted', (req, res) => {
+  res.send("app route testing");
 });
 
 app.use("/user", userRoute);
